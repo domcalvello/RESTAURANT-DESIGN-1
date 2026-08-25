@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#123047">
+    <meta name="description" content="A fictional restaurant website concept featuring lobster rolls, waterfront dining and two imagined North Coast locations.">
+    <title>Docklight Lobster House | Restaurant Website Concept</title>
+    <link rel="preload" href="images/lobster-hero.jpg" as="image" fetchpriority="high">
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header" data-header>
+      <div class="announcement" role="note">
+        <span>Two fictional North Coast locations</span><span aria-hidden="true">•</span><a href="#locations">Harbor Point + Old Town Landing</a>
+      </div>
+      <div class="nav-shell">
+        <a class="brand" href="#top" aria-label="Docklight Lobster House home">
+          <img src="images/logo-2.png" width="640" height="632" alt="" decoding="async">
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" data-menu-toggle>
+          <span class="sr-only">Open navigation</span><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+        </button>
+        <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation" data-nav>
+          <a href="#menu">Menu</a><a href="#locations">Locations</a><a href="#events">Events</a><a href="#private-events">Private Events</a><a href="#story">Our Story</a>
+          <a class="button button--red nav-cta" href="#menu">View Menu</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+  <!-- Video background replacement with image fallback -->
+<video 
+  class="hero__image" 
+  autoplay 
+  loop 
+  muted 
+  playsinline 
+  poster="images/lobster-hero.jpg"
+  width="871" 
+  height="846"
+>
+  <source src="images/lobster_video.webm" type="video/webm">
+  <source src="images/lobster_video.mp4" type="video/mp4">
+</video>
+
+  <div class="hero__wash" aria-hidden="true"></div>
+  <div class="hero__content page-width">
+    <p class="hero__eyebrow">North Coast lobster house</p>
+    <h1 id="hero-title">Craving<br>Lobster?</h1>
+    <p class="hero__copy">Coast-inspired rolls, bold dockside flavor and two unforgettable fictional stops.</p>
+    <a class="button button--blue button--large" href="#menu">View Menu</a>
+  </div>
+  <a class="hero__scroll" href="#quick-actions" aria-label="Explore the homepage">
+    <span>Explore</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+  </a>
+</section>
+
+      <nav class="quick-actions" id="quick-actions" aria-label="Quick actions">
+        <div class="quick-actions__inner page-width">
+          <a href="#menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"></path></svg><span><small>Start here</small>View Menu</span></a>
+          <a href="#locations"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"></circle><path d="M12 7v5l3 2"></path></svg><span><small>Plan your visit</small>Today’s Hours</span></a>
+          <a href="#locations"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"></path><circle cx="12" cy="9" r="2"></circle></svg><span><small>Choose a stop</small>Get Directions</span></a>
+          <a href="#concept-note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v12H3z"></path><path d="m3 7 9 6 9-6"></path></svg><span><small>Portfolio project</small>About This Concept</span></a>
+        </div>
+      </nav>
+
+      <section class="flight section section--cream brush-bottom" aria-labelledby="flight-title">
+        <div class="page-width split-layout">
+          <div class="flight__image-wrap">
+            <img src="images/lobster-flight.jpg" width="1178" height="1496" alt="The lobster-roll flight with three mini lobster rolls" loading="lazy" decoding="async">
+            <p class="photo-tag">Roll In And Chill</p>
+          </div>
+          <div class="flight__content">
+            <p class="kicker">The signature order</p>
+            <h2 class="display-heading" id="flight-title">Meet the Flight</h2>
+            <p class="section-lede">Can’t pick just one? Meet all three house styles in the lobster-roll flight.</p>
+            <ol class="flight-list">
+              <li><span>01</span><div><h3>Harbor Classic</h3><p>A cool, creamy dockside favorite.</p></div></li>
+              <li><span>02</span><div><h3>Beacon Butter</h3><p>Warm, buttery and straight to the point.</p></div></li>
+              <li><span>03</span><div><h3>Signal Fire</h3><p>A peppery house roll with a bold kick.</p></div></li>
+            </ol>
+            <a class="button button--red" href="#menu">View Full Menu</a>
+            <img src="images/OLC_lighthouse.png" class="lighthouse" alt="Lighthouse clipart" loading="lazy">
+          </div>
+        </div>
+      </section>
+
+      <section class="menu-section section" id="menu" aria-labelledby="menu-title">
+        <div class="page-width">
+          <div class="section-heading section-heading--center">
+            <p class="kicker">Pick your favorite</p><h2 class="display-heading" id="menu-title">Menu Preview</h2>
+            <p>Food-first, easygoing and built around the rolls that started it all.</p>
+          </div>
+          <!-- FICTIONAL PORTFOLIO CONTENT — names and descriptions are created for this design concept. -->
+          <div class="menu-grid">
+            <article class="menu-card menu-card--featured"><span class="menu-card__number">01</span><p class="menu-card__stamp">House favorites</p><h3>Dockside Rolls</h3><p>Harbor Classic, Beacon Butter and the signature Signal Fire.</p></article>
+            <article class="menu-card"><span class="menu-card__number">02</span><h3>The Docklight Flight</h3><p>Three mini rolls for the guest who wants the whole experience.</p></article>
+            <article class="menu-card"><span class="menu-card__number">03</span><h3>Galley Favorites</h3><p>Easygoing seafood plates inspired by days near the water.</p></article>
+            <article class="menu-card"><span class="menu-card__number">04</span><h3>Shoreline Burgers</h3><p>Casual, non-seafood choices for the rest of the crew.</p></article>
+            <article class="menu-card"><span class="menu-card__number">05</span><h3>Dock Sides</h3><p>Salty, crispy extras made to round out a lobster-roll stop.</p></article>
+            <article class="menu-card"><span class="menu-card__number">06</span><h3>Tide-Turners</h3><p>Cold refreshments at Harbor Point and a full bar in Old Town Landing.</p></article>
+          </div>
+          <div class="menu-note" role="note"><strong>Concept menu preview</strong><span>All item names and descriptions are fictional. Prices are intentionally omitted.</span></div>
+        </div>
+        <div class="lob"><img src="images/lobsterclip.png" alt="Lobster clipart" loading="lazy"></div>
+      </section>
+
+      <section class="locations section section--navy brush-top" id="locations" aria-labelledby="locations-title">
+        <div class="page-width">
+          <div class="section-heading section-heading--light"><p class="kicker">Choose your experience</p><h2 class="display-heading" id="locations-title">Two Places to Get Your Lobster Fix</h2></div>
+          <div class="location-grid">
+            <article class="location-card location-card--harbor">
+              <div class="location-card__image"><img src="images/olcott-waterfront.jpg" width="1206" height="974" alt="Temporary waterfront restaurant photograph" loading="lazy" decoding="async"><span>Harbor Point</span></div>
+              <div class="location-card__body">
+                <p class="location-card__eyebrow">The original waterfront stop</p><h3>Harbor Point</h3><p>Waterfront lobster-shack energy with an easygoing North Coast atmosphere.</p>
+                <address>Fictional waterfront location<br>North Coast</address>
+                <p class="hours-check">Concept location · No public hours</p>
+                <a class="button button--blue" href="#concept-note">Location Concept</a>
+              </div>
+            </article>
+            <article class="location-card location-card--old-town">
+              <div class="location-card__image"><img src="images/lewiston-stone-house.jpg" width="1448" height="1086" alt="Temporary historic restaurant exterior photograph" loading="lazy" decoding="async"><span>Old Town Landing</span></div>
+              <div class="location-card__body">
+                <p class="location-card__eyebrow">A bigger night out</p><h3>Old Town Landing</h3><p>A character-filled gathering place with a full bar, live music and private events.</p>
+                <address>Fictional historic-district location<br>North Coast</address>
+                <p class="hours-check">Concept location · No public hours</p>
+                <a class="button button--red" href="#concept-note">Location Concept</a>
+              </div>
+            </article>
+          </div>
+          <!-- Both locations and all associated details are fictional portfolio content. -->
+        </div>
+      </section>
+
+      <section class="events section section--paper" id="events" aria-labelledby="events-title">
+        <div class="page-width">
+          <div class="events__intro"><div><p class="kicker">Good food. Good tunes.</p><h2 class="display-heading" id="events-title">Meet Us by the Music</h2></div><p>Summer sounds and easygoing gatherings bring extra energy to both locations. Check the live schedule before heading out.</p></div>
+          <!-- FICTIONAL PORTFOLIO EVENT CARDS — no dates or operating schedule are implied. -->
+          <div class="event-grid">
+            <article class="event-card"><p class="event-card__label">Harbor Point</p><h3>Dockside Sessions</h3><p>Imagined seasonal performances with the water as the backdrop.</p><span>Concept programming</span></article>
+            <article class="event-card event-card--red"><p class="event-card__label">Old Town Landing</p><h3>Lantern Room Live</h3><p>A fictional evening-music series in the heart of the old town.</p><span>Concept programming</span></article>
+            <article class="event-card event-card--sand"><p class="event-card__label">Both locations</p><h3>High-Tide Weekends</h3><p>A portfolio concept for food specials, music and waterfront gatherings.</p><span>Sample event series</span></article>
+          </div>
+          <div class="section-action"><a class="button button--blue" href="#concept-note">About the Event Concept</a></div>
+        </div>
+      </section>
+
+      <section class="private-events" id="private-events" aria-labelledby="private-title">
+        <img src="images/harbor-room.jpg" width="2048" height="1136" alt="Temporary photograph of tables set for a private gathering" loading="lazy" decoding="async"><div class="private-events__overlay" aria-hidden="true"></div>
+        <div class="private-events__content page-width"><p class="kicker">The Lantern Room · Old Town Landing</p><h2 class="display-heading-con" id="private-title">Planning Something Special?</h2><p>A fictional private-dining concept for celebrations, rehearsal dinners, showers, birthdays and gatherings beneath the old town lights.</p><a class="button button--cream" href="#concept-note">View Concept Details</a></div>
+      </section>
+
+      <section class="story section section--cream" id="story" aria-labelledby="story-title">
+        <div class="page-width story__layout"><div class="story__mark" aria-hidden="true"><img src="images/logo.png" alt=""></div><div><p class="kicker">Our fictional story</p><h2 class="display-heading" id="story-title">Follow the Docklight</h2><p class="story__copy">Docklight Lobster House is an imagined North Coast restaurant built around coast-inspired lobster rolls and casual days by the water. The story begins at the Harbor Point shack, then grows into Old Town Landing with live music, a full bar and room to gather—all while staying playful, welcoming and centered on the food.</p></div></div>
+             <img src="images/anchor.png" class="anchor" alt="Anchor clipart" loading="lazy">
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="page-width footer-grid">
+        <div class="footer-brand"><a href="#top" aria-label="Back to the top"><img src="images/logo-2.png" width="640" height="632" alt="" loading="lazy" decoding="async"></a><p>Coast-inspired lobster rolls with two distinctly fictional North Coast experiences.</p><a href="#concept-note">Independent portfolio concept</a></div>
+        <div><h2>Harbor Point</h2><address>Fictional waterfront location<br>North Coast</address><a href="#locations">View location concept</a></div>
+        <div><h2>Old Town Landing</h2><address>Fictional historic-district location<br>North Coast</address><a href="#locations">View location concept</a></div>
+        <div><h2>Explore</h2><nav aria-label="Footer navigation"><a href="#menu">Menu</a><a href="#locations">Locations</a><a href="#events">Events</a><a href="#private-events">Private Events</a></nav></div>
+      </div>
+      <div class="footer-bottom page-width" id="concept-note"><p>© <span data-year>2026</span> Docklight Lobster House</p><p>Independent portfolio concept. The restaurant, locations, menu and events are fictional.</p></div>
+      <!-- PORTFOLIO DISCLOSURE — Docklight Lobster House is fictional. Existing temporary images still require publication-rights review before launch. -->
+    </footer>
+
+    <nav class="mobile-actions" aria-label="Mobile quick actions">
+      <a href="#menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"></path></svg><span>Menu</span></a>
+      <a href="#locations"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M7 4v6M17 4v6M5 10h14v10H5z"></path></svg><span>Locations</span></a>
+      <a href="#locations"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"></path><circle cx="12" cy="9" r="2"></circle></svg><span>Directions</span></a>
+      <a href="#concept-note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v12H3z"></path><path d="m3 7 9 6 9-6"></path></svg><span>Concept</span></a>
+    </nav>
+  </body>
+</html>
