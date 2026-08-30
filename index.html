@@ -6,7 +6,8 @@
     <meta name="theme-color" content="#123047">
     <meta name="description" content="A fictional restaurant website concept featuring lobster rolls, waterfront dining and two imagined North Coast locations.">
     <title>Docklight Lobster House | Restaurant Website Concept</title>
-    <link rel="preload" href="images/lobster-hero.jpg" as="image" fetchpriority="high">
+    <link rel="preload" href="images/lobster-hero-mobile.webp" as="image" type="image/webp" media="(max-width: 760px)" fetchpriority="high">
+    <link rel="preload" href="images/lobster-hero.jpg" as="image" media="(min-width: 761px)" fetchpriority="high">
     <link rel="icon" href="images/logo.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
@@ -20,7 +21,10 @@
       </div>
       <div class="nav-shell">
         <a class="brand" href="#top" aria-label="Docklight Lobster House home">
-          <img src="images/logo-2.png" width="640" height="632" alt="" decoding="async">
+          <picture>
+            <source srcset="images/logo-2-mobile.webp" type="image/webp" media="(max-width: 760px)">
+            <img src="images/logo-2.png" width="640" height="632" alt="" decoding="async">
+          </picture>
         </a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" data-menu-toggle>
           <span class="sr-only">Open navigation</span><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
@@ -34,6 +38,10 @@
 
     <main id="main-content">
       <section class="hero" id="top" aria-labelledby="hero-title">
+  <picture class="hero__mobile-media" aria-hidden="true">
+    <source srcset="images/lobster-hero-mobile.webp" type="image/webp">
+    <img src="images/lobster-hero.jpg" width="720" height="1080" alt="" fetchpriority="high" decoding="async">
+  </picture>
   <!-- Video background replacement with image fallback -->
 <video 
   class="hero__image" 
@@ -41,12 +49,14 @@
   loop 
   muted 
   playsinline 
-  poster="images/lobster-hero.jpg"
+  preload="auto"
+  data-desktop-webm="images/lobster_video.webm"
+  data-desktop-mp4="images/lobster_video.mp4"
+  data-mobile-mp4="images/lobster_video-mobile.webm"
   width="871" 
   height="846"
+  aria-hidden="true"
 >
-  <source src="images/lobster_video.webm" type="video/webm">
-  <source src="images/lobster_video.mp4" type="video/mp4">
 </video>
 
   <div class="hero__wash" aria-hidden="true"></div>
@@ -73,7 +83,10 @@
       <section class="flight section section--cream brush-bottom" aria-labelledby="flight-title">
         <div class="page-width split-layout">
           <div class="flight__image-wrap">
-            <img src="images/lobster-flight.jpg" width="1178" height="1496" alt="The lobster-roll flight with three mini lobster rolls" loading="lazy" decoding="async">
+            <picture>
+              <source srcset="images/lobster-flight-mobile.webp" type="image/webp" media="(max-width: 760px)">
+              <img src="images/lobster-flight.jpg" width="1178" height="1496" alt="The lobster-roll flight with three mini lobster rolls" loading="lazy" decoding="async">
+            </picture>
             <p class="photo-tag">Roll In And Chill</p>
           </div>
           <div class="flight__content">
@@ -86,7 +99,10 @@
               <li><span>03</span><div><h3>Signal Fire</h3><p>A peppery house roll with a bold kick.</p></div></li>
             </ol>
             <a class="button button--red" href="#menu">View Full Menu</a>
-            <img src="images/OLC_lighthouse.png" class="lighthouse" alt="Lighthouse clipart" loading="lazy">
+            <picture class="lighthouse-source">
+              <source srcset="images/OLC_lighthouse-mobile.webp" type="image/webp" media="(max-width: 760px)">
+              <img src="images/OLC_lighthouse.png" class="lighthouse" alt="Lighthouse clipart" loading="lazy" decoding="async">
+            </picture>
           </div>
         </div>
       </section>
@@ -108,12 +124,12 @@
           </div>
           <div class="menu-note" role="note"><strong>Concept menu preview</strong><span>All item names and descriptions are fictional. Prices are intentionally omitted.</span></div>
         </div>
-        <div class="lob"><img src="images/lobsterclip.png" alt="Lobster clipart" loading="lazy"></div>
+        <div class="lob"><picture><source srcset="images/lobsterclip-mobile.webp" type="image/webp" media="(max-width: 760px)"><img src="images/lobsterclip.png" alt="Lobster clipart" loading="lazy" decoding="async"></picture></div>
       </section>
 
       <section class="locations section section--navy brush-top" id="locations" aria-labelledby="locations-title">
         <div class="page-width">
-          <div class="section-heading section-heading--light"><p class="kicker">Choose your experience</p><h2 class="display-heading" id="locations-title">Two Places to Get Your Lobster Fix</h2></div>
+          <div class="section-heading section-heading--light"><p class="kicker">Choose your experience</p><h2 class="display-heading" id="locations-title">Two Places to<span class="mobile-break"><br></span> Get Your<span class="mobile-break"><br></span> Lobster Fix</h2></div>
           <div class="location-grid">
             <article class="location-card location-card--harbor">
               <div class="location-card__image"><img src="images/olcott-waterfront.jpg" width="1206" height="974" alt="Temporary waterfront restaurant photograph" loading="lazy" decoding="async"><span>Harbor Point</span></div>
@@ -152,8 +168,11 @@
       </section>
 
       <section class="private-events" id="private-events" aria-labelledby="private-title">
-        <img src="images/harbor-room.jpg" width="2048" height="1136" alt="Temporary photograph of tables set for a private gathering" loading="lazy" decoding="async"><div class="private-events__overlay" aria-hidden="true"></div>
-        <div class="private-events__content page-width"><p class="kicker">The Lantern Room · Old Town Landing</p><h2 class="display-heading-con" id="private-title">Planning Something Special?</h2><p>A fictional private-dining concept for celebrations, rehearsal dinners, showers, birthdays and gatherings beneath the old town lights.</p><a class="button button--cream" href="#concept-note">View Concept Details</a></div>
+        <picture class="private-events__media">
+          <source srcset="images/harbor-room-mobile.webp" type="image/webp" media="(max-width: 760px)">
+          <img src="images/harbor-room.jpg" width="2048" height="1136" alt="Temporary photograph of tables set for a private gathering" loading="lazy" decoding="async">
+        </picture><div class="private-events__overlay" aria-hidden="true"></div>
+        <div class="private-events__content page-width"><p class="kicker">The Lantern Room · Old Town Landing</p><h2 class="display-heading-con" id="private-title">Planning<span class="mobile-break"><br></span> Something<span class="mobile-break"><br></span> Special?</h2><p>A fictional private-dining concept for celebrations, rehearsal dinners, showers, birthdays and gatherings beneath the old town lights.</p><a class="button button--cream" href="#concept-note">View Concept Details</a></div>
       </section>
 
       <section class="story section section--cream" id="story" aria-labelledby="story-title">
@@ -165,7 +184,7 @@
 
     <footer class="site-footer">
       <div class="page-width footer-grid">
-        <div class="footer-brand"><a href="#top" aria-label="Back to the top"><img src="images/logo-2.png" width="640" height="632" alt="" loading="lazy" decoding="async"></a><p>Coast-inspired lobster rolls with two distinctly fictional North Coast experiences.</p><a href="#concept-note">Independent portfolio concept</a></div>
+        <div class="footer-brand"><a href="#top" aria-label="Back to the top"><picture><source srcset="images/logo-2-mobile.webp" type="image/webp" media="(max-width: 760px)"><img src="images/logo-2.png" width="640" height="632" alt="" loading="lazy" decoding="async"></picture></a><p>Coast-inspired lobster rolls with two distinctly fictional North Coast experiences.</p><a href="#concept-note">Independent portfolio concept</a></div>
         <div><h2>Harbor Point</h2><address>Fictional waterfront location<br>North Coast</address><a href="#locations">View location concept</a></div>
         <div><h2>Old Town Landing</h2><address>Fictional historic-district location<br>North Coast</address><a href="#locations">View location concept</a></div>
         <div><h2>Explore</h2><nav aria-label="Footer navigation"><a href="#menu">Menu</a><a href="#locations">Locations</a><a href="#events">Events</a><a href="#private-events">Private Events</a></nav></div>
