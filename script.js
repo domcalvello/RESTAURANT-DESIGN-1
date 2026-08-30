@@ -3,6 +3,8 @@ const navigation = document.querySelector('[data-nav]');
 const year = document.querySelector('[data-year]');
 const heroVideo = document.querySelector('.hero__image');
 const heroVideoBreakpoint = window.matchMedia('(max-width: 760px)');
+const isAppleTouchDevice = /iPad|iPhone|iPod/.test(navigator.userAgent)
+  || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
 
 function configureHeroVideo() {
   if (!heroVideo) return;
@@ -13,8 +15,17 @@ function configureHeroVideo() {
     return;
   }
 
+  const mobileSources = isAppleTouchDevice
+    ? [
+        [heroVideo.dataset.mobileIosMp4, 'video/mp4'],
+        [heroVideo.dataset.mobileWebm, 'video/webm']
+      ]
+    : [
+        [heroVideo.dataset.mobileWebm, 'video/webm'],
+        [heroVideo.dataset.mobileIosMp4, 'video/mp4']
+      ];
   const sources = mode === 'mobile'
-    ? [[heroVideo.dataset.mobileMp4, 'video/mp4']]
+    ? mobileSources
     : [
         [heroVideo.dataset.desktopWebm, 'video/webm'],
         [heroVideo.dataset.desktopMp4, 'video/mp4']
@@ -36,6 +47,8 @@ function configureHeroVideo() {
   heroVideo.autoplay = true;
   heroVideo.loop = true;
   heroVideo.playsInline = true;
+  heroVideo.setAttribute('playsinline', '');
+  heroVideo.setAttribute('webkit-playsinline', '');
   heroVideo.load();
 
   const play = () => heroVideo.play().catch(() => {});
@@ -50,6 +63,8 @@ else heroVideoBreakpoint.addListener(configureHeroVideo);
 document.addEventListener('visibilitychange', () => {
   if (!document.hidden && heroVideo?.paused) heroVideo.play().catch(() => {});
 });
+window.addEventListener('pageshow', () => heroVideo?.play().catch(() => {}));
+document.addEventListener('touchstart', () => heroVideo?.play().catch(() => {}), { once: true, passive: true });
 
 function setMenu(open) {
   if (!menuToggle || !navigation) return;
