@@ -2,9 +2,41 @@ const menuToggle = document.querySelector('[data-menu-toggle]');
 const navigation = document.querySelector('[data-nav]');
 const year = document.querySelector('[data-year]');
 const heroVideo = document.querySelector('.hero__image');
+const hero = document.querySelector('.hero');
+const heroCursorLobster = document.querySelector('[data-hero-cursor-lobster]');
 const heroVideoBreakpoint = window.matchMedia('(max-width: 760px)');
 const isAppleTouchDevice = /iPad|iPhone|iPod/.test(navigator.userAgent)
   || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
+if (hero && heroCursorLobster && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+  hero.classList.add('has-lobster-cursor');
+  let pointerX = 0;
+  let pointerY = 0;
+  let cursorFrame = 0;
+
+  const positionLobster = () => {
+    heroCursorLobster.style.setProperty('--lobster-x', `${pointerX}px`);
+    heroCursorLobster.style.setProperty('--lobster-y', `${pointerY}px`);
+    cursorFrame = 0;
+  };
+
+  hero.addEventListener('pointerenter', (event) => {
+    pointerX = event.clientX;
+    pointerY = event.clientY;
+    positionLobster();
+    heroCursorLobster.classList.add('is-visible');
+  });
+
+  hero.addEventListener('pointermove', (event) => {
+    pointerX = event.clientX;
+    pointerY = event.clientY;
+    if (!cursorFrame) cursorFrame = requestAnimationFrame(positionLobster);
+  });
+
+  hero.addEventListener('pointerleave', () => {
+    heroCursorLobster.classList.remove('is-visible');
+  });
+}
 
 function configureHeroVideo() {
   if (!heroVideo) return;

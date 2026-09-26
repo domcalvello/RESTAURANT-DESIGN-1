@@ -96,6 +96,8 @@ button,a{-webkit-tap-highlight-color:transparent}
 .hero__mobile-media img{width:100%;height:100%;object-fit:cover}
 .hero__image{z-index:-3;object-fit:cover;object-position:center 48%;background:url("images/lobster-hero.jpg") center 48%/cover no-repeat}
 .hero__wash{z-index:-2;opacity: 0.6;background:linear-gradient(0deg,rgba(12,35,52,.42) 0%,rgba(18,48,71,.52) 43%,rgba(18,48,71,.05) 72%),linear-gradient(0deg,rgba(18,48,71,.46),transparent 40%)}
+.hero__cursor-lobster{position:fixed;z-index:4;top:0;left:0;width:66px;height:auto;opacity:0;pointer-events:none;filter:drop-shadow(0 5px 5px rgba(12,35,52,.32));transform:translate3d(var(--lobster-x,0),var(--lobster-y,0),0) translate(-50%,-50%) rotate(-12deg);transform-origin:center;transition:opacity 120ms ease;will-change:transform}
+.hero__cursor-lobster.is-visible{opacity:1}
 .hero::after{content:"";position:absolute;z-index:1;right:0;bottom:-2px;left:0;height:24px;background:var(--cream);clip-path:polygon(0 48%,8% 22%,16% 62%,25% 34%,35% 70%,45% 28%,55% 67%,66% 30%,77% 64%,88% 25%,100% 55%,100% 100%,0 100%)}
 .hero__content{padding-top:28px}
 .hero__eyebrow,.kicker{margin:0 0 12px;color:var(--red);font-family:var(--condensed);font-size:.82rem;font-weight:900;letter-spacing:.2em;text-transform:uppercase}
@@ -287,6 +289,8 @@ address{font-style:normal}.location-card address{margin-bottom:8px;color:var(--n
   .mobile-actions{position:fixed;z-index:60;right:0;bottom:0;left:0;min-height:72px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));padding-bottom:env(safe-area-inset-bottom,0px);color:#fff;border-top:2px solid #fff;background:var(--navy);box-shadow:0 -7px 20px rgba(18,48,71,.26)}
   .mobile-actions a{min-width:0;min-height:64px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:4px;padding:6px 2px;font-family:var(--condensed);font-size:.66rem;font-weight:900;letter-spacing:.04em;line-height:1;text-decoration:none;text-transform:uppercase}.mobile-actions a+a{border-left:1px solid rgba(255,255,255,.18)}.mobile-actions svg{width:23px;height:23px}
 }
+@media(hover:hover) and (pointer:fine){.hero.has-lobster-cursor{cursor:none}}
+@media(hover:none),(pointer:coarse){.hero__cursor-lobster{display:none}}
 @media(max-width:390px){
   :root{--page:calc(100% - 28px)}.hero h1{font-size:clamp(3.35rem,17.2vw,4.15rem)}.display-heading{font-size:clamp(2.5rem,12.2vw,3.05rem)}.menu-card,.event-card{padding-inline:21px}.mobile-actions a{font-size:.62rem}
 }
@@ -298,5 +302,5 @@ address{font-style:normal}.location-card address{margin-bottom:8px;color:var(--n
     .hero h1{max-width:calc(100% - 6px);padding-right:6px;font-size:clamp(3.1rem,15.5vw,4.15rem);letter-spacing:0;text-shadow:3px 4px 0 var(--navy),4px 6px 12px rgba(0,0,0,.38);transform:none}
   }
 }
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}.hero__cursor-lobster{display:none}}
 @media print{.site-header,.mobile-actions,.hero__scroll,.quick-actions{display:none!important}body{padding:0;color:#000;background:#fff}.hero{min-height:0;padding:60px 0}}
